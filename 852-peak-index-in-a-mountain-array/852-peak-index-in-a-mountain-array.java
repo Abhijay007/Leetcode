@@ -1,18 +1,13 @@
 class Solution {
-    public int peakIndexInMountainArray(int[] nums) {
-     int max = nums[0];
-     for(int i = 0; i<nums.length; i++){
-        if(nums[i]>max){
-            max = nums[i];
+    public int peakIndexInMountainArray(int[] arr) {
+        int m = Integer.MIN_VALUE;
+        int ans = -1;
+        for(int i= 0; i < arr.length; i++){
+            if(arr[i]> m){
+                ans = i;
+                m = arr[i];
+            }
         }
+       return ans;
     }
- 
-         int i;
-        for( i =0 ; i<nums.length; i++){
-        if(nums[i] == max){
-            return i;
-        }
-    }
-    return i;
-}
 }
